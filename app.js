@@ -19,11 +19,11 @@
  * 
  * 
  * REQUIRMENTS:
- *  1.  5% - Cache at least one element using selectElementById.
- *  2.  5% - Cache at least one element using querySelector or querySelectorAll.
+ *  1.  5% - Cache at least one element using selectElementById. ✓
+ *  2.  5% - Cache at least one element using querySelector or querySelectorAll. ✓
  *  3. 10% - Iterate over a collection of elements to accomplish some task.
- *  4.  5% - Create at least one element using createElement.
- *  5.  5% - Use appendChild and/or prepend to add new elements to the DOM.
+ *  4.  5% - Create at least one element using createElement. ✓
+ *  5.  5% - Use appendChild and/or prepend to add new elements to the DOM. ✓
  *  6. 10% - Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
  *  7.  5% - Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
  *  8.  3% - Modify at least one attribute of an element in response to user interaction.
@@ -46,14 +46,32 @@
 //           Goal: Create a blank tree and allow user to dymnamicly decorate it 
 //                 add snow, ordaments, gifts
 
+const treeContainer = document.querySelector(".treeContainer")
 const decoTreeCkbxCont = document.getElementById("decoTreeCkbxContId");
 
-function resetPage(event){
+// Clears the question/checkbox div from the page
+function resetPage(){
     decoTreeCkbxCont.remove();
     createTree();
 }
 decoTreeCkbxCont.addEventListener('change', resetPage);
 
+// Creates a plain tree
 function createTree(){
-    // generate tree
+    const treeTop = document.createElement('div');
+    treeTop.classList.add('triangle', 'treeTop');
+    const treeMiddle = document.createElement('div');
+    treeMiddle.classList.add('triangle', 'treeMiddle');
+    const treeBottom = document.createElement('div');
+    treeBottom.classList.add('triangle', 'treeBottom');
+    const underTree = document.createElement('div');
+    underTree.classList.add('underTree');
+    const treeTrunk = document.createElement('div');
+    treeTrunk.classList.add("treeTrunk");
+
+    treeContainer.appendChild(treeTop);
+    treeContainer.appendChild(treeMiddle);
+    treeContainer.appendChild(treeBottom);
+    treeContainer.appendChild(underTree);
+    underTree.appendChild(treeTrunk);
 }

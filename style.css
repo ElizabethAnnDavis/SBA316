@@ -2,12 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border:solid black;
     font-size: 44px;
     background-color: #c7dbf7;
-    margin-top:3em;
-    padding-top:3em;
-    padding-bottom:3em;
+    margin-top:6em;
+    padding-bottom:6em;
 }
 
 .treeContainer{
