@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors 
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min)
+ * 14.  5% - Commit frequently to the git repository. (30x min) CURRENT: 4
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
  * 
  * 9% unaccounted for due to removed requirments
@@ -48,30 +48,88 @@
 
 const treeContainer = document.querySelector(".treeContainer")
 const decoTreeCkbxCont = document.getElementById("decoTreeCkbxContId");
+// Create tree elements
+const treeTop = document.createElement('div');
+treeTop.classList.add('triangle', 'treeTop');
+const treeMiddle = document.createElement('div');
+treeMiddle.classList.add('triangle', 'treeMiddle');
+const treeBottom = document.createElement('div');
+treeBottom.classList.add('triangle', 'treeBottom');
+const underTree = document.createElement('div');
+underTree.classList.add('underTree');
+const treeTrunk = document.createElement('div');
+treeTrunk.classList.add("treeTrunk");
+
+// Create the initial circle to be attached to the mouse.
+const mouseCircle = createCircle();
 
 // Clears the question/checkbox div from the page
-function resetPage(){
+function resetPage(e){
     decoTreeCkbxCont.remove();
     createTree();
+    treeContainer.appendChild(mouseCircle);
 }
 decoTreeCkbxCont.addEventListener('change', resetPage);
 
 // Creates a plain tree
 function createTree(){
-    const treeTop = document.createElement('div');
-    treeTop.classList.add('triangle', 'treeTop');
-    const treeMiddle = document.createElement('div');
-    treeMiddle.classList.add('triangle', 'treeMiddle');
-    const treeBottom = document.createElement('div');
-    treeBottom.classList.add('triangle', 'treeBottom');
-    const underTree = document.createElement('div');
-    underTree.classList.add('underTree');
-    const treeTrunk = document.createElement('div');
-    treeTrunk.classList.add("treeTrunk");
-
     treeContainer.appendChild(treeTop);
     treeContainer.appendChild(treeMiddle);
     treeContainer.appendChild(treeBottom);
     treeContainer.appendChild(underTree);
     underTree.appendChild(treeTrunk);
 }
+
+
+
+// Helper function for making circles.
+function createSmallCircle(){
+  const circle = document.createElement("div");
+  circle.classList.add("circleSmall");
+  circle.style.backgroundColor = 'white';
+  //newColors(circle);
+  return circle;
+}
+// Helper function for making circles.
+function createCircle(){
+    const circle = document.createElement("div");
+    circle.classList.add("circle");
+    circle.style.backgroundColor = 'red';
+    //newColors(circle);
+    return circle;
+  }
+
+// Helper function for placing circles.
+function placeCircle(circle){
+    const copy = circle.cloneNode(true);
+    treeContainer.appendChild(copy);
+}
+
+function placeBox(){
+    const box = document.createElement('div');
+    box.classList.add('box');
+    treeContainer.appendChild(box);
+}
+
+// Place the mouse circle at the current location,
+// and switch the circle to a new color.
+function handleClick(e) {
+    if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){
+        placeCircle(createCircle());
+    }else if(e.target === underTree){
+        placeBox();
+    }else{
+        placeCircle(mouseCircle);
+    }
+    //newColors(mouseCircle);
+}
+treeContainer.addEventListener('click', handleClick);
+
+
+ 
+// Moves the mouse circle alongside the mouse.
+function handleMove(e){
+    mouseCircle.style.top = e.y - 25 + "px";
+    mouseCircle.style.left = e.x - 25 + "px";
+}
+treeContainer.addEventListener('pointermove', handleMove);
