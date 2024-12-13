@@ -41,3 +41,17 @@
  * 9% unaccounted for due to removed requirments
  * 
  */
+
+
+// Option 1. Snake Game
+//           Goal: Implement a basic version of the Snake game. 
+//                 Control the snake with arrow keys and grow its length when it eats food.
+
+// Option 2. Simon Says Game
+//           Goal: Create a game that shows a sequence of colors the player has to repeat. 
+//                 If the player makes a mistake, the game ends.
+
+// Option 3. decorate a christmas tree
+//           Goal: Create a blank tree and allow user to dymnamicly decorate it 
+//                 add snow, ordaments, gifts
+// https://www.homemade-gifts-made-easy.com/image-files/christmas-tree-template-layered-jagged-400x518.png

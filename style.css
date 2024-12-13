@@ -1,0 +1,50 @@
+.treeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:solid black;
+    background-color: #c7dbf7;
+    margin-top:3em;
+    padding-top:1em;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+}
+
+.treeTop {
+    border-left: 111px solid transparent;
+    border-right: 111px solid transparent;
+    border-bottom: 111px solid green;
+    margin-bottom: -66px;
+}
+
+.treeMiddle{
+    border-left: 222px solid transparent;
+    border-right: 222px solid transparent;
+    border-bottom: 222px solid green;
+    margin-bottom: -151px;
+}
+
+.treeBottom{
+    border-left: 444px solid transparent;
+    border-right: 444px solid transparent;
+    border-bottom: 444px solid green;
+}
+.underTree{
+    
+    width: 98.5vw;
+    height:80px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4faef;
+}
+.treeTrunk{
+    width: 80px;
+    height: 50px;
+    background-color: brown;
+    margin-top: -30px;
+}
