@@ -61,7 +61,7 @@ const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
 
 // Create the initial circle to be attached to the mouse.
-const mouseCircle = createCircle();
+const mouseCircle = createSmallCircle();
 
 // Clears the question/checkbox div from the page
 function resetPage(e){
@@ -105,22 +105,43 @@ function placeCircle(circle){
     treeContainer.appendChild(copy);
 }
 
-function placeBox(){
+function placeBigCircle(e){
+    const circle = createCircle();
+    circle.style.left = e.clientX + "px";
+    circle.style.top = e.clientY + "px";
+    treeMiddle.appendChild(circle);
+}
+
+function placeBox(e){
     const box = document.createElement('div');
     box.classList.add('box');
-    treeContainer.appendChild(box);
+
+    box.style.left = e.clientX + "px";
+    box.style.top = e.clientY + "px";
+
+    underTree.appendChild(box);
 }
 
 // Place the mouse circle at the current location,
 // and switch the circle to a new color.
 function handleClick(e) {
     if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){
-        placeCircle(createCircle());
+        //placeCircle(createCircle());
+        placeBigCircle(e);
+    }else if(e.target === underTree){
+        placeBox(e);
+    }else{
+        placeCircle(mouseCircle);
+    };
+    
+    /*if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){
+        //placeCircle(createCircle());
+        placeBigCircle(e.target, placeBigCircle());
     }else if(e.target === underTree){
         placeBox();
     }else{
         placeCircle(mouseCircle);
-    }
+    };*/
     //newColors(mouseCircle);
 }
 treeContainer.addEventListener('click', handleClick);
