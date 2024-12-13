@@ -1,4 +1,16 @@
-.treeContainer {
+.decoTreeCkbxCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:solid black;
+    font-size: 44px;
+    background-color: #c7dbf7;
+    margin-top:3em;
+    padding-top:3em;
+    padding-bottom:3em;
+}
+
+.treeContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,12 +21,12 @@
     padding-top:1em;
 }
 
-.triangle {
+.triangle{
     width: 0;
     height: 0;
 }
 
-.treeTop {
+.treeTop{
     border-left: 111px solid transparent;
     border-right: 111px solid transparent;
     border-bottom: 111px solid green;
