@@ -184,6 +184,6 @@ function changeTreeColor(e){
 chngColorBtn.addEventListener('click', changeTreeColor);
 
 function getImageInfo(e){
-
+    let userResponse = prompt("Would you like to know about your picture?", "yes");
 }
 imageInfo.addEventListener('click', getImageInfo);
