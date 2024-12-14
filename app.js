@@ -21,19 +21,19 @@
  * REQUIRMENTS:
  *  1.  5% - Cache at least one element using selectElementById. ✓
  *  2.  5% - Cache at least one element using querySelector or querySelectorAll. ✓
- *  3. 10% - Iterate over a collection of elements to accomplish some task.
+ *  3. 10% - Iterate over a collection of elements to accomplish some task. ✓
  *  4.  5% - Create at least one element using createElement. ✓
  *  5.  5% - Use appendChild and/or prepend to add new elements to the DOM. ✓
  *  6. 10% - Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent. ✓
  *  7.  5% - Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties. ✓
  *  8.  3% - Modify at least one attribute of an element in response to user interaction. ✓
  *  9. 10% - Register at least two different event listeners and create the associated event handler functions. ✓
- * 10.  3% - Use at least two Browser Object Model (BOM) properties or methods.
+ * 10.  3% - Use at least two Browser Object Model (BOM) properties or methods. ✓
  * 11.  5% - Include at least one form and/or input with HTML attribute validation. ✓
  * 12.  5% - Include at least one form and/or input with DOM event-based validation. 
  *           (This can be the same form or input as the one above, 
  *           but should include event-based validation in addition to the HTML attribute validation.)
- * 13. 10% - Ensure that the program runs without errors 
+ * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
  * 14.  5% - Commit frequently to the git repository. (30x min) CURRENT: 10
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
@@ -191,3 +191,36 @@ function getImageInfo(e){
     };
 }
 imageInfo.addEventListener('click', getImageInfo);
+
+// Counts the circle and box elements on display
+function getImageCounts(){
+    let s1 = "";
+    let s2 = "";
+    let boxCount = 0;
+    let circleCnt = 0;
+    for(const item of underTree.children){
+        console.log(item);
+        if(item.classList.contains('box')){
+            boxCount++;
+        };
+    };
+    for(const child of treeContainer.children){
+        console.log(child);
+        if(child.classList.contains('circleSmall')){
+            circleCnt++;
+        };  
+    };
+
+    if(circleCnt < 10){
+        s1 = "LET IT SNOW! snowCnt: " + circleCnt;
+    }else if(circleCnt > 25){
+        s1 = "A WINTER WONDERLAND! snowCnt: " + circleCnt;
+    };
+
+    s2 = `You have ${boxCount} gifts unden the tree!`;
+    if(s1 != ""){
+        alert(s1 +"\n" + s2);
+    }else{
+        alert(s2);
+    };
+}
