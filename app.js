@@ -61,8 +61,8 @@ const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
 
 const btnCont = document.querySelector('.btnCont');
-const newBtn = document.createElement('button');
-newBtn.innerHTML = "Try Again?";
+const imageInfo = document.createElement('button');
+imageInfo.innerHTML = "About Image";
 const chngColorBtn = document.createElement('button');
 chngColorBtn.innerHTML = "Change Tree Color?";
 
@@ -77,8 +77,8 @@ function resetPage(e){
     decoTreeCkbxCont.remove();
     createTree();
 
-    btnCont.appendChild(chngColorBtn)
-    btnCont.appendChild(newBtn);
+    btnCont.appendChild(chngColorBtn);
+    btnCont.appendChild(imageInfo);
     
     treeContainer.appendChild(mouseCircle);
 }
@@ -92,6 +92,7 @@ function createTree(){
     treeContainer.appendChild(underTree);
     underTree.appendChild(treeTrunk);
 }
+
 
 
 
@@ -182,7 +183,7 @@ function changeTreeColor(e){
 }
 chngColorBtn.addEventListener('click', changeTreeColor);
 
-function newImage(e){
-    
+function getImageInfo(e){
+
 }
-newBtn.addEventListener('click', newImage);
+imageInfo.addEventListener('click', getImageInfo);

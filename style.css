@@ -88,3 +88,11 @@ html, body, .decoTreeCkbxCont{
     background-color:silver;
     border:solid rgb(177, 177, 210);
 }
+
+.overlayText{
+    position:absolute;
+    top:20px;
+    left:20px;
+    z-index:10;
+    color:black;
+}
