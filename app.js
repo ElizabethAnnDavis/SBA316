@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 18
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 19
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
  * 
  * 9% unaccounted for due to removed requirments
@@ -59,7 +59,7 @@ const underTree = document.createElement('div');
 underTree.classList.add('underTree');
 const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
-
+// Create button elements
 const btnCont = document.querySelector('.btnCont');
 const imageInfo = document.createElement('button');
 imageInfo.innerHTML = "About Image";
@@ -70,6 +70,7 @@ let treeScreen = false;
 
 // Create the initial circle to be attached to the mouse.
 const mouseCircle = createSmallCircle();
+
 
 // Clears the question/checkbox div from the page
 function resetPage(e){
@@ -84,6 +85,7 @@ function resetPage(e){
 }
 decoTreeCkbxCont.addEventListener('change', resetPage);
 
+
 // Creates a plain tree
 function createTree(){
     treeContainer.appendChild(treeTop);
@@ -94,7 +96,7 @@ function createTree(){
 }
 
 
-// Helper function for making circles.
+// Function for making circles.
 function createSmallCircle(){
     const circle = document.createElement("div");
     circle.classList.add("circleSmall");
@@ -105,7 +107,7 @@ function createSmallCircle(){
 }
 
 
-// Helper function for placing circles.
+// Function for placing circles.
 function placeCircle(circle){
     if(treeScreen){
         const copy = circle.cloneNode(true);
@@ -116,6 +118,7 @@ function placeCircle(circle){
 }
 
 
+// Function for placing boxes
 function placeBox(e){
     const box = document.createElement('div');
     box.classList.add('box');
@@ -126,8 +129,8 @@ function placeBox(e){
     underTree.appendChild(box);
 }
 
-// Place the mouse circle at the current location,
-// and switch the circle to a new color.
+
+// Place the mouse circle or box at the current location
 function handleClick(e) {
     if(e.target === underTree){
         placeBox(e);
@@ -137,7 +140,6 @@ function handleClick(e) {
 }
 treeContainer.addEventListener('click', handleClick);
 
-
  
 // Moves the mouse circle alongside the mouse.
 function handleMove(e){
@@ -146,6 +148,8 @@ function handleMove(e){
 }
 treeContainer.addEventListener('pointermove', handleMove);
 
+
+// Allows user to change the color of the tree
 function changeTreeColor(e){
     let colorChoice = prompt("Select a color", "white");
 
@@ -161,6 +165,8 @@ function changeTreeColor(e){
 }
 chngColorBtn.addEventListener('click', changeTreeColor);
 
+
+// Determines if user wants information about the image with a window prompt
 function getImageInfo(e){
     let userResponse = prompt("Would you like to know about your picture?", "yes");
 
@@ -169,6 +175,7 @@ function getImageInfo(e){
     };
 }
 imageInfo.addEventListener('click', getImageInfo);
+
 
 // Counts the circle and box elements on display
 function getImageCounts(){
