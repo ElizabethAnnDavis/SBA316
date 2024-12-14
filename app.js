@@ -185,5 +185,9 @@ chngColorBtn.addEventListener('click', changeTreeColor);
 
 function getImageInfo(e){
     let userResponse = prompt("Would you like to know about your picture?", "yes");
+
+    if(userResponse.toLowerCase() === 'yes'){
+        getImageCounts();
+    };
 }
 imageInfo.addEventListener('click', getImageInfo);
