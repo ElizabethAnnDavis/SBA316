@@ -60,11 +60,14 @@ underTree.classList.add('underTree');
 const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
 
+let treeScreen = false;
+
 // Create the initial circle to be attached to the mouse.
 const mouseCircle = createSmallCircle();
 
 // Clears the question/checkbox div from the page
 function resetPage(e){
+    treeScreen = true;
     decoTreeCkbxCont.remove();
     createTree();
     treeContainer.appendChild(mouseCircle);
@@ -96,19 +99,24 @@ function createCircle(){
     const circle = document.createElement("div");
     circle.classList.add("circle");
     circle.style.backgroundColor = 'red';
+    circle.style.display = 'none';
     //newColors(circle);
     return circle;
   }
 
 // Helper function for placing circles.
 function placeCircle(circle){
-    const copy = circle.cloneNode(true);
-    copy.style.display = 'initial';
-    treeContainer.appendChild(copy);
+    if(treeScreen){
+        const copy = circle.cloneNode(true);
+        copy.style.display = 'initial';
+        treeContainer.appendChild(copy);
+    };
+    
 }
 
 function placeBigCircle(e){
     const circle = createCircle();
+    circle.style.display = 'initial';
     circle.style.left = e.clientX + "px";
     circle.style.top = e.clientY + "px";
     treeMiddle.appendChild(circle);
@@ -127,25 +135,15 @@ function placeBox(e){
 // Place the mouse circle at the current location,
 // and switch the circle to a new color.
 function handleClick(e) {
-    if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){//testCoordinatesLocation(e.clientX, e.clientY)){
+    /*if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){//checkTriangles(e.clientX, e.clientY)){//
         //placeCircle(createCircle());
         console.log("Here");
         placeBigCircle(e);
-    }else if(e.target === underTree){
+    }else */if(e.target === underTree){
         placeBox(e);
     }else{
         placeCircle(mouseCircle);
     };
-    
-    /*if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){
-        //placeCircle(createCircle());
-        placeBigCircle(e.target, placeBigCircle());
-    }else if(e.target === underTree){
-        placeBox();
-    }else{
-        placeCircle(mouseCircle);
-    };*/
-    //newColors(mouseCircle);
 }
 treeContainer.addEventListener('click', handleClick);
 
@@ -157,9 +155,6 @@ function handleMove(e){
     mouseCircle.style.left = e.x - 25 + "px";
 }
 treeContainer.addEventListener('pointermove', handleMove);
-
-
-
 
 
 
