@@ -26,16 +26,16 @@
  *  5.  5% - Use appendChild and/or prepend to add new elements to the DOM. ✓
  *  6. 10% - Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
  *  7.  5% - Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
- *  8.  3% - Modify at least one attribute of an element in response to user interaction.
+ *  8.  3% - Modify at least one attribute of an element in response to user interaction. ✓
  *  9. 10% - Register at least two different event listeners and create the associated event handler functions.
  * 10.  3% - Use at least two Browser Object Model (BOM) properties or methods.
- * 11.  5% - Include at least one form and/or input with HTML attribute validation.
+ * 11.  5% - Include at least one form and/or input with HTML attribute validation. ✓
  * 12.  5% - Include at least one form and/or input with DOM event-based validation. 
  *           (This can be the same form or input as the one above, 
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors 
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) CURRENT: 6
+ * 14.  5% - Commit frequently to the git repository. (30x min) CURRENT: 8
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
  * 
  * 9% unaccounted for due to removed requirments
@@ -60,6 +60,10 @@ underTree.classList.add('underTree');
 const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
 
+const btnCont = document.querySelector('.btnCont');
+const saveBtn = document.createElement('button');
+saveBtn.innerHTML = "SAVE";
+
 let treeScreen = false;
 
 // Create the initial circle to be attached to the mouse.
@@ -70,6 +74,7 @@ function resetPage(e){
     treeScreen = true;
     decoTreeCkbxCont.remove();
     createTree();
+    btnCont.appendChild(saveBtn);
     treeContainer.appendChild(mouseCircle);
 }
 decoTreeCkbxCont.addEventListener('change', resetPage);
