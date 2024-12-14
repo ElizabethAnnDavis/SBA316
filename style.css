@@ -86,4 +86,5 @@ html, body, .decoTreeCkbxCont{
     width: 75px;
     height: 50px;
     background-color:silver;
+    border:solid rgb(177, 177, 210);
 }

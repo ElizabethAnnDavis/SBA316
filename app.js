@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors 
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) CURRENT: 4
+ * 14.  5% - Commit frequently to the git repository. (30x min) CURRENT: 6
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
  * 
  * 9% unaccounted for due to removed requirments
@@ -87,6 +87,7 @@ function createSmallCircle(){
   const circle = document.createElement("div");
   circle.classList.add("circleSmall");
   circle.style.backgroundColor = 'white';
+  circle.style.display = 'none';
   //newColors(circle);
   return circle;
 }
@@ -102,6 +103,7 @@ function createCircle(){
 // Helper function for placing circles.
 function placeCircle(circle){
     const copy = circle.cloneNode(true);
+    copy.style.display = 'initial';
     treeContainer.appendChild(copy);
 }
 
@@ -125,8 +127,9 @@ function placeBox(e){
 // Place the mouse circle at the current location,
 // and switch the circle to a new color.
 function handleClick(e) {
-    if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){
+    if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){//testCoordinatesLocation(e.clientX, e.clientY)){
         //placeCircle(createCircle());
+        console.log("Here");
         placeBigCircle(e);
     }else if(e.target === underTree){
         placeBox(e);
@@ -154,3 +157,107 @@ function handleMove(e){
     mouseCircle.style.left = e.x - 25 + "px";
 }
 treeContainer.addEventListener('pointermove', handleMove);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+** THIS IS MAKING ME SO MAD LIKE WHY DOES THE X,Y CHANGE EVERY TIME WTF **
+
+// Tests the background color of a specified x, y coordinate location
+function testCoordinatesLocation(x, y){
+    let inTree = false;
+    let inTop = false;
+    let inMiddle = false;
+    let inBottom = false;
+
+    let leftOfLine = false;
+    let rightOfLine = false;
+
+    console.log(x + " and " + y);
+    
+    // test top
+    if(x <= 860 && x >= 640){
+        console.log("Test 1, layer 1");
+        if(y >= 15 && y <= 50){
+            console.log("Test 1, layer 2");
+            console.log("inTop " + inTop);
+            inTop = true;
+        };
+    };
+
+    // test middle
+    if(x <= 970 && x >= 530){
+        console.log("Test 2, layer 1");
+        if(y >= 50 && y <= 200){
+            console.log("Test 2, layer 2");
+            console.log("inMiddle " + inMiddle);
+            inMiddle = true;
+        };
+    };
+
+    // test bottom
+    if(x <= 1190 && x >= 310){
+        console.log("Test 3, layer 1");
+        if(y >= 200 && y <= 480){
+            console.log("Test 3, layer 2");
+            console.log("inBottom " + inBottom);
+            inBottom = true;
+        };
+    };
+
+    if(inTop || inMiddle || inBottom){
+        inTree = true;
+    };
+    
+    console.log(inTree);
+    return inTree;
+    /*const element = document.elementFromPoint(x, y);
+    const backgroundColor = window.getComputedStyle(element).backgroundColor;
+
+    if(backgroundColor === 'rgb(0, 128, 0)'){
+        console.log(true);
+        return true;
+    }else{
+        console.log(backgroundColor);
+        console.log(x + " and " + y);
+        return false;
+    };*/
+//}*/
