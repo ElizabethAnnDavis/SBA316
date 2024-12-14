@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) CURRENT: 10
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 18
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
  * 
  * 9% unaccounted for due to removed requirments
@@ -44,7 +44,7 @@
 
 // Concept: decorate a christmas tree
 //           Goal: Create a blank tree and allow user to dymnamicly decorate it 
-//                 add snow, ordaments, gifts
+//                 add snow, gifts
 
 const treeContainer = document.querySelector(".treeContainer")
 const decoTreeCkbxCont = document.getElementById("decoTreeCkbxContId");
@@ -94,8 +94,6 @@ function createTree(){
 }
 
 
-
-
 // Helper function for making circles.
 function createSmallCircle(){
     const circle = document.createElement("div");
@@ -105,16 +103,7 @@ function createSmallCircle(){
     //newColors(circle);
     return circle;
 }
-/*
-// Helper function for making circles.
-function createCircle(){
-    const circle = document.createElement("div");
-    circle.classList.add("circle");
-    circle.style.backgroundColor = 'red';
-    circle.style.display = 'none';
-    //newColors(circle);
-    return circle;
-}*/
+
 
 // Helper function for placing circles.
 function placeCircle(circle){
@@ -125,14 +114,7 @@ function placeCircle(circle){
     };
     
 }
-/*
-function placeBigCircle(e){
-    const circle = createCircle();
-    circle.style.display = 'initial';
-    circle.style.left = e.clientX + "px";
-    circle.style.top = e.clientY + "px";
-    treeMiddle.appendChild(circle);
-}*/
+
 
 function placeBox(e){
     const box = document.createElement('div');
@@ -147,11 +129,7 @@ function placeBox(e){
 // Place the mouse circle at the current location,
 // and switch the circle to a new color.
 function handleClick(e) {
-    /*if(e.target === treeTop || e.target === treeMiddle || e.target === treeBottom){//checkTriangles(e.clientX, e.clientY)){//
-        //placeCircle(createCircle());
-        console.log("Here");
-        placeBigCircle(e);
-    }else */if(e.target === underTree){
+    if(e.target === underTree){
         placeBox(e);
     }else{
         placeCircle(mouseCircle);
