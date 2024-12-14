@@ -156,8 +156,8 @@ treeContainer.addEventListener('click', handleClick);
  
 // Moves the mouse circle alongside the mouse.
 function handleMove(e){
-    mouseCircle.style.top = e.y - 25 + "px";
-    mouseCircle.style.left = e.x - 25 + "px";
+    mouseCircle.style.top = e.y - 7.5 + "px";
+    mouseCircle.style.left = e.x - 7.5 + "px";
 }
 treeContainer.addEventListener('pointermove', handleMove);
 
