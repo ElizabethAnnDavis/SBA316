@@ -63,6 +63,8 @@ treeTrunk.classList.add("treeTrunk");
 const btnCont = document.querySelector('.btnCont');
 const saveBtn = document.createElement('button');
 saveBtn.innerHTML = "SAVE";
+const chngColorBtn = document.createElement('button');
+chngColorBtn.innerHTML = "Change Tree Color?";
 
 let treeScreen = false;
 
@@ -74,7 +76,10 @@ function resetPage(e){
     treeScreen = true;
     decoTreeCkbxCont.remove();
     createTree();
+
+    btnCont.appendChild(chngColorBtn)
     btnCont.appendChild(saveBtn);
+    
     treeContainer.appendChild(mouseCircle);
 }
 decoTreeCkbxCont.addEventListener('change', resetPage);
@@ -92,13 +97,14 @@ function createTree(){
 
 // Helper function for making circles.
 function createSmallCircle(){
-  const circle = document.createElement("div");
-  circle.classList.add("circleSmall");
-  circle.style.backgroundColor = 'white';
-  circle.style.display = 'none';
-  //newColors(circle);
-  return circle;
+    const circle = document.createElement("div");
+    circle.classList.add("circleSmall");
+    circle.style.backgroundColor = 'white';
+    circle.style.display = 'none';
+    //newColors(circle);
+    return circle;
 }
+/*
 // Helper function for making circles.
 function createCircle(){
     const circle = document.createElement("div");
@@ -107,7 +113,7 @@ function createCircle(){
     circle.style.display = 'none';
     //newColors(circle);
     return circle;
-  }
+}*/
 
 // Helper function for placing circles.
 function placeCircle(circle){
@@ -118,14 +124,14 @@ function placeCircle(circle){
     };
     
 }
-
+/*
 function placeBigCircle(e){
     const circle = createCircle();
     circle.style.display = 'initial';
     circle.style.left = e.clientX + "px";
     circle.style.top = e.clientY + "px";
     treeMiddle.appendChild(circle);
-}
+}*/
 
 function placeBox(e){
     const box = document.createElement('div');
@@ -160,3 +166,18 @@ function handleMove(e){
     mouseCircle.style.left = e.x - 7.5 + "px";
 }
 treeContainer.addEventListener('pointermove', handleMove);
+
+function changeTreeColor(e){
+    let colorChoice = prompt("Select a color", "white");
+
+    treeTop.style.borderBottomColor = colorChoice;
+    treeMiddle.style.borderBottomColor = colorChoice;
+    treeBottom.style.borderBottomColor = colorChoice;
+
+    if(colorChoice === 'white'){
+        mouseCircle.style.backgroundColor = 'rgb(246, 246, 246)';
+    };
+
+    chngColorBtn.innerHTML = "Change color again?";
+}
+chngColorBtn.addEventListener('click', changeTreeColor);

@@ -59,7 +59,7 @@ html, body, .decoTreeCkbxCont{
 .treeTrunk{
     width: 80px;
     height: 50px;
-    background-color: brown;
+    background-color: rgb(131, 41, 41);
     margin-top: -30px;
 }
 
