@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 19
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 20
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
  * 
  * 9% unaccounted for due to removed requirments
@@ -61,10 +61,21 @@ const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
 // Create button elements
 const btnCont = document.querySelector('.btnCont');
+btnCont.classList.add('btnCont');
 const imageInfo = document.createElement('button');
 imageInfo.innerHTML = "About Image";
 const chngColorBtn = document.createElement('button');
 chngColorBtn.innerHTML = "Change Tree Color?";
+// Create input field
+const inputCont = document.createElement('div');
+const inputTitle = document.createElement('input');
+inputTitle.setAttribute('type', 'text');
+inputTitle.setAttribute('placeholder', "Add a title");
+const enterBtn = document.createElement('button');
+enterBtn.innerHTML = "Enter";
+
+inputCont.appendChild(inputTitle);
+inputCont.appendChild(enterBtn);
 
 let treeScreen = false;
 
@@ -80,6 +91,7 @@ function resetPage(e){
 
     btnCont.appendChild(chngColorBtn);
     btnCont.appendChild(imageInfo);
+    btnCont.appendChild(inputCont);
     
     treeContainer.appendChild(mouseCircle);
 }
