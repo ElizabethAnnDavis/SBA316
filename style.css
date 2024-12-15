@@ -95,16 +95,15 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayDiv{
-    border:solid black;
     position: absolute;
     top: 7%;
-    left: 47%;
-    height:88px;
-    width:88px;
+    left: 48%;
+    height:55px;
+    width:60px;
 }
 
 .overlayStarDiv{
     position: absolute;
-    top: -42%;
-    left: 10%;
+    top: -66%;
+    left: -13%;
 }

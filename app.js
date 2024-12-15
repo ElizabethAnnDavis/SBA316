@@ -158,6 +158,8 @@ function placeBox(e){
 function handleClick(e) {
     if(e.target === underTree){
         placeBox(e);
+    }else if(e.target === starBox && !starCreated){
+        createStarDiv();
     }else{
         placeCircle(mouseCircle);
     };
@@ -253,19 +255,16 @@ enterBtn.addEventListener('click', testTitle);
 
 
 
-function createStarDiv(e) {
+function createStarDiv() {
     if(!starCreated){
         const starDiv = document.createElement('div');
         starDiv.classList.add('overlayStarDiv');
         starDiv.innerHTML = '&#9733;'; // HTML entity for a filled star
         starDiv.style.fontSize = '88px'; 
-        starDiv.style.color = 'yellow'; 
-
-        //starDiv.style.left = e.clientX + "px";
-        //starDiv.style.top = e.clientY + "px";
+        starDiv.style.color = 'yellow';
 
         starBox.appendChild(starDiv);
         starCreated = true;
     };
 }
-starBox.addEventListener('click', createStarDiv);
+//starBox.addEventListener('click', createStarDiv);
