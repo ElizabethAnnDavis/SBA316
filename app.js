@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 28
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 29
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience. ✓
  * 
  * 9% unaccounted for due to removed requirments ?
@@ -62,6 +62,8 @@ const underTree = document.createElement('div');
 underTree.classList.add('underTree');
 const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
+const starBox = document.createElement('div');
+starBox.classList.add('overlayDiv');
 
 // Create button elements
 const btnCont = document.querySelector('.btnCont');
@@ -76,20 +78,17 @@ const inputCont = document.createElement('div');
 const inputTitle = document.createElement('input');
 inputTitle.setAttribute('type', 'text');
 inputTitle.setAttribute('placeholder', "Add a title");
-//inputTitle.setAttribute('minlength', '2');
 const enterBtn = document.createElement('button');
 enterBtn.innerHTML = "Enter";
 inputCont.appendChild(inputTitle);
 inputCont.appendChild(enterBtn);
 
-let treeScreen = false;
-let starCreated = false;
-const starBox = document.createElement('div');
-starBox.classList.add('overlayDiv');
-
-
 // Create the initial circle to be attached to the mouse.
 const mouseCircle = createSmallCircle();
+
+// Some booleans to test page state
+let treeScreen = false;
+let starCreated = false;
 
 
 // Clears the question/checkbox div from the page
@@ -114,8 +113,7 @@ function createTree(){
     treeContainer.appendChild(treeBottom);
     treeContainer.appendChild(underTree);
     underTree.appendChild(treeTrunk);
-
-    
+ 
     treeContainer.appendChild(starBox);
 }
 
@@ -252,9 +250,7 @@ function testTitle(e){
 enterBtn.addEventListener('click', testTitle);
 
 
-
-
-
+// Creates a star to put on top of the tree
 function createStarDiv() {
     if(!starCreated){
         const starDiv = document.createElement('div');
@@ -267,4 +263,3 @@ function createStarDiv() {
         starCreated = true;
     };
 }
-//starBox.addEventListener('click', createStarDiv);
