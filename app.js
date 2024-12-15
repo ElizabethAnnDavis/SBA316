@@ -30,15 +30,15 @@
  *  9. 10% - Register at least two different event listeners and create the associated event handler functions. ✓
  * 10.  3% - Use at least two Browser Object Model (BOM) properties or methods. ✓
  * 11.  5% - Include at least one form and/or input with HTML attribute validation. ✓
- * 12.  5% - Include at least one form and/or input with DOM event-based validation. 
+ * 12.  5% - Include at least one form and/or input with DOM event-based validation. ✓ 
  *           (This can be the same form or input as the one above, 
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 23
- * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 25
+ * 15.  5% - Level of effort displayed in creativity, presentation, and user experience. ✓
  * 
- * 9% unaccounted for due to removed requirments
+ * 9% unaccounted for due to removed requirments ?
  * 
  */
 
@@ -83,6 +83,10 @@ inputCont.appendChild(inputTitle);
 inputCont.appendChild(enterBtn);
 
 let treeScreen = false;
+let starCreated = false;
+const starBox = document.createElement('div');
+starBox.classList.add('overlayDiv');
+
 
 // Create the initial circle to be attached to the mouse.
 const mouseCircle = createSmallCircle();
@@ -110,6 +114,9 @@ function createTree(){
     treeContainer.appendChild(treeBottom);
     treeContainer.appendChild(underTree);
     underTree.appendChild(treeTrunk);
+
+    
+    treeContainer.appendChild(starBox);
 }
 
 
@@ -241,3 +248,24 @@ function testTitle(e){
     };
 }
 enterBtn.addEventListener('click', testTitle);
+
+
+
+
+
+function createStarDiv(e) {
+    if(!starCreated){
+        const starDiv = document.createElement('div');
+        starDiv.classList.add('overlayStarDiv');
+        starDiv.innerHTML = '&#9733;'; // HTML entity for a filled star
+        starDiv.style.fontSize = '88px'; 
+        starDiv.style.color = 'yellow'; 
+
+        //starDiv.style.left = e.clientX + "px";
+        //starDiv.style.top = e.clientY + "px";
+
+        starBox.appendChild(starDiv);
+        starCreated = true;
+    };
+}
+starBox.addEventListener('click', createStarDiv);
