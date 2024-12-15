@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 30+ ✓
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 29
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience. ✓
  * 
  * 9% unaccounted for due to removed requirments ?
@@ -257,7 +257,7 @@ function createStarDiv() {
         const starDiv = document.createElement('div');
         starDiv.classList.add('overlayStarDiv');
         starDiv.innerHTML = '&#9733;'; // HTML entity for a filled star
-        starDiv.style.fontSize = '88px'; 
+        starDiv.style.fontSize = '111px'; 
         starDiv.style.color = 'yellow';
 
         starBox.appendChild(starDiv);
