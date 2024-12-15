@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 22
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 23
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience.
  * 
  * 9% unaccounted for due to removed requirments
@@ -76,6 +76,7 @@ const inputCont = document.createElement('div');
 const inputTitle = document.createElement('input');
 inputTitle.setAttribute('type', 'text');
 inputTitle.setAttribute('placeholder', "Add a title");
+//inputTitle.setAttribute('minlength', '2');
 const enterBtn = document.createElement('button');
 enterBtn.innerHTML = "Enter";
 inputCont.appendChild(inputTitle);
@@ -229,5 +230,12 @@ function getImageCounts(){
 
 // Function to determine if user entered title is valid
 function testTitle(e){
-
+    const newTitle = document.createElement('h1');
+    newTitle.classList.add('overlayText');
+    if(inputTitle != ""){
+        newTitle.innerHTML = inputTitle.value;//textContent;
+        //console.log(inputTitle.value);
+        treeContainer.appendChild(newTitle);
+    };
 }
+enterBtn.addEventListener('click', testTitle);

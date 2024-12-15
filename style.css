@@ -85,3 +85,11 @@ html, body, .decoTreeCkbxCont{
     display:flex;
     justify-content: space-between;
 }
+
+.overlayText{
+    color:rgb(152, 135, 211);
+    font-weight: bolder;
+    position: absolute;
+    top: 8%;
+    left: 2%;
+}
