@@ -232,10 +232,12 @@ function getImageCounts(){
 function testTitle(e){
     const newTitle = document.createElement('h1');
     newTitle.classList.add('overlayText');
-    if(inputTitle != ""){
-        newTitle.innerHTML = inputTitle.value;//textContent;
-        //console.log(inputTitle.value);
+    if(inputTitle.value != ""){
+        newTitle.innerHTML = `TITLE: ${inputTitle.value.toUpperCase()}!`;
         treeContainer.appendChild(newTitle);
+    }else{
+        newTitle.innerHTML = "";
+        treeContainer.lastChild.remove();
     };
 }
 enterBtn.addEventListener('click', testTitle);
