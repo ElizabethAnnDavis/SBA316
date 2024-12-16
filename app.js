@@ -309,8 +309,10 @@ function getImageCounts(){
 
     if(ordCnt < 3){
         s2 = "Get decorating!";
-    }else if(ordCnt >= 3){
+    }else if(ordCnt >= 3 && ordCnt <= 50){
         s2 = `The tree looks beautiful with ${ordCnt} ordaments!`;
+    }else{
+        s2 = `${ordCnt} is a lot of ordaments!`;
     };
 
     if(boxCount === 0){
@@ -328,7 +330,7 @@ function testTitle(e){
     const newTitle = document.createElement('h1');
     newTitle.classList.add('overlayText');
     if(inputTitle.value != ""){
-        newTitle.innerHTML = `TITLE: ${inputTitle.value.toUpperCase()}!`;
+        newTitle.innerHTML = `${inputTitle.value.toUpperCase()}!`;
         treeContainer.appendChild(newTitle);
     }else{
         newTitle.innerHTML = "";
