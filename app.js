@@ -188,20 +188,21 @@ function placeCircle(circle){
     };  
 }
 
+
+// Function for making ordament circles
 function createCircle(){
     const circle = document.createElement("div");
     circle.classList.add("circle");
     circle.style.backgroundColor = 'rgb(146, 6, 6)';
-    //circle.style.display = 'none';
     return circle;
 }
 
 
+// Function for placing ordaments
 function placeBigCircle(e){
     const circle = createCircle();
-    //circle.style.display = 'initial';
-    circle.style.left = e.clientX + "px";
-    circle.style.top = e.clientY + "px";
+    circle.style.left = e.clientX - 16.5 + "px";
+    circle.style.top = e.clientY - 16.5 + "px";
     treeContainer.appendChild(circle);
 }
 
@@ -213,8 +214,8 @@ function placeBox(e){
     const boxRibbon = document.createElement('div');
     boxRibbon.classList.add('boxRibbon');
 
-    box.style.left = e.clientX + "px";
-    box.style.top = e.clientY + "px";
+    box.style.left = e.clientX - 37.5 + "px";
+    box.style.top = e.clientY - 25 + "px";
     
     box.appendChild(boxRibbon);
     underTree.appendChild(box);
@@ -272,7 +273,7 @@ function getImageInfo(e){
 imageInfo.addEventListener('click', getImageInfo);
 
 
-// Counts the circle and box elements on display
+// Counts the circle(snow), ordament, and box elements on display
 function getImageCounts(){
     let s1 = "";
     let s2 = "";
@@ -317,8 +318,6 @@ function getImageCounts(){
     }else{
         s3 = `You have ${boxCount} gifts under the tree!`;
     }
-
-
 
     alert(s1 +"\n" + s2 + "\n" + s3);
 }
