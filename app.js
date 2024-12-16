@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 29
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 30 ✓
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience. ✓
  * 
  * 9% unaccounted for due to removed requirments ?
@@ -44,7 +44,7 @@
 
 // Concept: decorate a christmas tree
 //           Goal: Create a blank tree and allow user to dymnamicly decorate it 
-//                 add snow, gifts
+//                 add snow, gifts, star
 
 
 // Get elements from HTML
@@ -64,6 +64,40 @@ const treeTrunk = document.createElement('div');
 treeTrunk.classList.add("treeTrunk");
 const starBox = document.createElement('div');
 starBox.classList.add('overlayDiv');
+
+// Create tree overlay boxes
+const treeOverlayBoxOne = document.createElement('div');
+treeOverlayBoxOne.classList.add('overlayTreeOne');
+const treeOverlayBoxTwo = document.createElement('div');
+treeOverlayBoxTwo.classList.add('overlayTreeTwo');
+const treeOverlayBoxThree = document.createElement('div');
+treeOverlayBoxThree.classList.add('overlayTreeThree');
+const treeOverlayBoxFour = document.createElement('div');
+treeOverlayBoxFour.classList.add('overlayTreeFour');
+const treeOverlayBoxFive = document.createElement('div');
+treeOverlayBoxFive.classList.add('overlayTreeFive');
+const treeOverlayBoxSix = document.createElement('div');
+treeOverlayBoxSix.classList.add('overlayTreeSix');
+const treeOverlayBoxSeven = document.createElement('div');
+treeOverlayBoxSeven.classList.add('overlayTreeSeven');
+const treeOverlayBoxEight = document.createElement('div');
+treeOverlayBoxEight.classList.add('overlayTreeEight');
+const treeOverlayBoxNine = document.createElement('div');
+treeOverlayBoxNine.classList.add('overlayTreeNine');
+const treeOverlayBoxTen = document.createElement('div');
+treeOverlayBoxTen.classList.add('overlayTreeTen');
+const treeOverlayBoxEleven = document.createElement('div');
+treeOverlayBoxEleven.classList.add('overlayTreeEleven');
+const treeOverlayBoxTwelve = document.createElement('div');
+treeOverlayBoxTwelve.classList.add('overlayTreeTwelve');
+const treeOverlayBoxThirteen = document.createElement('div');
+treeOverlayBoxThirteen.classList.add('overlayTreeThirteen');
+const treeOverlayBoxFourteen = document.createElement('div');
+treeOverlayBoxFourteen.classList.add('overlayTreeFourteen');
+const treeOverlayBoxFifteen = document.createElement('div');
+treeOverlayBoxFifteen.classList.add('overlayTreeFifteen');
+const treeOverlayBoxSixteen = document.createElement('div');
+treeOverlayBoxSixteen.classList.add('overlayTreeSixteen');
 
 // Create button elements
 const btnCont = document.querySelector('.btnCont');
@@ -115,6 +149,23 @@ function createTree(){
     underTree.appendChild(treeTrunk);
  
     treeContainer.appendChild(starBox);
+
+    treeContainer.appendChild(treeOverlayBoxOne);
+    treeContainer.appendChild(treeOverlayBoxTwo);
+    treeContainer.appendChild(treeOverlayBoxThree);
+    treeContainer.appendChild(treeOverlayBoxFour);
+    treeContainer.appendChild(treeOverlayBoxFive);
+    treeContainer.appendChild(treeOverlayBoxSix);
+    treeContainer.appendChild(treeOverlayBoxSeven);
+    treeContainer.appendChild(treeOverlayBoxEight);
+    treeContainer.appendChild(treeOverlayBoxNine);
+    treeContainer.appendChild(treeOverlayBoxTen);
+    treeContainer.appendChild(treeOverlayBoxEleven);
+    treeContainer.appendChild(treeOverlayBoxTwelve);
+    treeContainer.appendChild(treeOverlayBoxThirteen);
+    treeContainer.appendChild(treeOverlayBoxFourteen);
+    treeContainer.appendChild(treeOverlayBoxFifteen);
+    treeContainer.appendChild(treeOverlayBoxSixteen);
 }
 
 
@@ -124,7 +175,6 @@ function createSmallCircle(){
     circle.classList.add("circleSmall");
     circle.style.backgroundColor = 'white';
     circle.style.display = 'none';
-    //newColors(circle);
     return circle;
 }
 

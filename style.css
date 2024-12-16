@@ -109,6 +109,7 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayDiv{
+    border:solid black;
     position: absolute;
     top: 7%;
     left: 48%;
@@ -120,4 +121,148 @@ html, body, .decoTreeCkbxCont{
     position: absolute;
     top: -122%;
     left: -24%;
+}
+
+.overlayTreeOne{
+    border:solid black;
+    position: absolute;
+    top: 15%;
+    left: 46%;
+    height:25px;
+    width:121px;
+}
+
+.overlayTreeTwo{
+    border:solid black;
+    position: absolute;
+    top: 19%;
+    left: 43%;
+    height:33px;
+    width:210px;
+}
+
+.overlayTreeThree{
+    border:solid black;
+    position: absolute;
+    top: 24%;
+    left: 44%;
+    height:25px;
+    width:181px;
+}
+
+.overlayTreeFour{
+    border:solid black;
+    position: absolute;
+    top: 28%;
+    left: 42%;
+    height:33px;
+    width:244px;
+}
+
+.overlayTreeFive{
+    border:solid black;
+    position: absolute;
+    top: 33%;
+    left: 40%;
+    height:25px;
+    width:311px;
+}
+
+.overlayTreeSix{
+    border:solid black;
+    position: absolute;
+    top: 37%;
+    left: 37%;
+    height:33px;
+    width:395px;
+}
+
+.overlayTreeSeven{
+    border:solid black;
+    position: absolute;
+    top: 42%;
+    left: 35%;
+    height:25px;
+    width:454px;
+}
+
+.overlayTreeEight{
+    border:solid black;
+    position: absolute;
+    top: 46%;
+    left: 37%;
+    height:33px;
+    width:395px;
+}
+
+.overlayTreeNine{
+    border:solid black;
+    position: absolute;
+    top: 51%;
+    left: 35%;
+    height:33px;
+    width:454px;
+}
+
+.overlayTreeTen{
+    border:solid black;
+    position: absolute;
+    top: 56%;
+    left: 33%;
+    height:25px;
+    width:515px;
+}
+
+.overlayTreeEleven{
+    border:solid black;
+    position: absolute;
+    top: 60%;
+    left: 31%;
+    height:33px;
+    width:585px;
+}
+
+.overlayTreeTwelve{
+    border:solid black;
+    position: absolute;
+    top: 65%;
+    left: 29%;
+    height:25px;
+    width:646px;
+}
+
+.overlayTreeThirteen{
+    border:solid black;
+    position: absolute;
+    top: 69%;
+    left: 27%;
+    height:33px;
+    width:711px;
+}
+
+.overlayTreeFourteen{
+    border:solid black;
+    position: absolute;
+    top: 74%;
+    left: 24%;
+    height:33px;
+    width:800px;
+}
+
+.overlayTreeFifteen{
+    border:solid black;
+    position: absolute;
+    top: 79%;
+    left: 22%;
+    height:25px;
+    width:858px;
+}
+
+.overlayTreeSixteen{
+    border:solid black;
+    position: absolute;
+    top: 83%;
+    left: 21%;
+    height:15px;
+    width:888px;
 }
