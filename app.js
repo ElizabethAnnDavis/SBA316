@@ -191,7 +191,7 @@ function placeCircle(circle){
 function createCircle(){
     const circle = document.createElement("div");
     circle.classList.add("circle");
-    circle.style.backgroundColor = 'red';
+    circle.style.backgroundColor = 'rgb(146, 6, 6)';
     //circle.style.display = 'none';
     return circle;
 }
@@ -276,18 +276,27 @@ imageInfo.addEventListener('click', getImageInfo);
 function getImageCounts(){
     let s1 = "";
     let s2 = "";
+    let s3 = "";
     let boxCount = 0;
     let circleCnt = 0;
+    let ordCnt = 0;
+
     for(const item of underTree.children){
-        console.log(item);
+        //console.log(item);
         if(item.classList.contains('box')){
             boxCount++;
         };
     };
     for(const child of treeContainer.children){
-        console.log(child);
+        //console.log(child);
         if(child.classList.contains('circleSmall')){
             circleCnt++;
+        };  
+    };
+    for(const child of treeContainer.children){
+        //console.log(child);
+        if(child.classList.contains('circle')){
+            ordCnt++;
         };  
     };
 
@@ -297,13 +306,21 @@ function getImageCounts(){
         s1 = "A WINTER WONDERLAND!";
     };
 
+    if(ordCnt < 3){
+        s2 = "Get decorating!";
+    }else if(ordCnt >= 3){
+        s2 = `The tree looks beautiful with ${ordCnt} ordaments!`;
+    };
+
     if(boxCount === 0){
-        s2 = "You have no presents. Someone's been naughty!"
+        s3 = "You have no presents. Someone's been naughty!"
     }else{
-        s2 = `You have ${boxCount} gifts under the tree!`;
+        s3 = `You have ${boxCount} gifts under the tree!`;
     }
 
-    alert(s1 +"\n" + s2);
+
+
+    alert(s1 +"\n" + s2 + "\n" + s3);
 }
 
 
