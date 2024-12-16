@@ -79,7 +79,15 @@ html, body, .decoTreeCkbxCont{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-  }
+}
+
+.circle{
+    position: absolute;
+    
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+}
 
 .box{
     position: absolute;
@@ -98,6 +106,12 @@ html, body, .decoTreeCkbxCont{
     margin-right: auto;
     background-color:rgb(177, 177, 210);
     border:solid rgb(177, 177, 210);
+}
+
+.star{
+    position: absolute;
+    top: -122%;
+    left: -24%;
 }
 
 /**********************************************/
@@ -120,7 +134,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayDiv{
-    border:solid black;
     position: absolute;
     top: 7%;
     left: 48%;
@@ -128,14 +141,7 @@ html, body, .decoTreeCkbxCont{
     width:60px;
 }
 
-.overlayStarDiv{
-    position: absolute;
-    top: -122%;
-    left: -24%;
-}
-
 .overlayTreeOne{
-    border:solid black;
     position: absolute;
     top: 15%;
     left: 46%;
@@ -144,7 +150,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeTwo{
-    border:solid black;
     position: absolute;
     top: 19%;
     left: 43%;
@@ -153,7 +158,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeThree{
-    border:solid black;
     position: absolute;
     top: 24%;
     left: 44%;
@@ -162,7 +166,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeFour{
-    border:solid black;
     position: absolute;
     top: 28%;
     left: 42%;
@@ -171,7 +174,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeFive{
-    border:solid black;
     position: absolute;
     top: 33%;
     left: 40%;
@@ -180,7 +182,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeSix{
-    border:solid black;
     position: absolute;
     top: 37%;
     left: 37%;
@@ -189,7 +190,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeSeven{
-    border:solid black;
     position: absolute;
     top: 42%;
     left: 35%;
@@ -198,7 +198,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeEight{
-    border:solid black;
     position: absolute;
     top: 46%;
     left: 37%;
@@ -207,7 +206,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeNine{
-    border:solid black;
     position: absolute;
     top: 51%;
     left: 35%;
@@ -216,7 +214,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeTen{
-    border:solid black;
     position: absolute;
     top: 56%;
     left: 33%;
@@ -225,7 +222,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeEleven{
-    border:solid black;
     position: absolute;
     top: 60%;
     left: 31%;
@@ -234,7 +230,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeTwelve{
-    border:solid black;
     position: absolute;
     top: 65%;
     left: 29%;
@@ -243,7 +238,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeThirteen{
-    border:solid black;
     position: absolute;
     top: 69%;
     left: 27%;
@@ -252,7 +246,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeFourteen{
-    border:solid black;
     position: absolute;
     top: 74%;
     left: 24%;
@@ -261,7 +254,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeFifteen{
-    border:solid black;
     position: absolute;
     top: 79%;
     left: 22%;
@@ -270,7 +262,6 @@ html, body, .decoTreeCkbxCont{
 }
 
 .overlayTreeSixteen{
-    border:solid black;
     position: absolute;
     top: 83%;
     left: 21%;

@@ -188,6 +188,23 @@ function placeCircle(circle){
     };  
 }
 
+function createCircle(){
+    const circle = document.createElement("div");
+    circle.classList.add("circle");
+    circle.style.backgroundColor = 'red';
+    //circle.style.display = 'none';
+    return circle;
+}
+
+
+function placeBigCircle(e){
+    const circle = createCircle();
+    //circle.style.display = 'initial';
+    circle.style.left = e.clientX + "px";
+    circle.style.top = e.clientY + "px";
+    treeContainer.appendChild(circle);
+}
+
 
 // Function for placing boxes
 function placeBox(e){
@@ -210,6 +227,8 @@ function handleClick(e) {
         placeBox(e);
     }else if(e.target === starBox && !starCreated){
         createStarDiv();
+    }else if(e.target === treeOverlayBoxOne || e.target === treeOverlayBoxTwo || e.target === treeOverlayBoxThree || e.target === treeOverlayBoxFour || e.target === treeOverlayBoxFive || e.target === treeOverlayBoxSix || e.target === treeOverlayBoxSeven || e.target === treeOverlayBoxEight || e.target === treeOverlayBoxNine || e.target === treeOverlayBoxTen || e.target === treeOverlayBoxEleven || e.target === treeOverlayBoxTwelve || e.target === treeOverlayBoxThirteen || e.target === treeOverlayBoxFourteen || e.target === treeOverlayBoxFifteen || e.target === treeOverlayBoxSixteen){
+        placeBigCircle(e);
     }else{
         placeCircle(mouseCircle);
     };
@@ -307,7 +326,7 @@ enterBtn.addEventListener('click', testTitle);
 function createStarDiv() {
     if(!starCreated){
         const starDiv = document.createElement('div');
-        starDiv.classList.add('overlayStarDiv');
+        starDiv.classList.add('star');
         starDiv.innerHTML = '&#9733;'; // HTML entity for a filled star
         starDiv.style.fontSize = '111px'; 
         starDiv.style.color = 'yellow';
