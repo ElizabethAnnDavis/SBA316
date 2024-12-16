@@ -35,7 +35,7 @@
  *           but should include event-based validation in addition to the HTML attribute validation.)
  * 13. 10% - Ensure that the program runs without errors ✓
  *           (comment out things that do not work, and explain your blockers - you can still receive partial credit).
- * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 30 ✓
+ * 14.  5% - Commit frequently to the git repository. (30x min) --> CURRENT COUNT: 30+ ✓
  * 15.  5% - Level of effort displayed in creativity, presentation, and user experience. ✓
  * 
  * 9% unaccounted for due to removed requirments ?
@@ -44,7 +44,7 @@
 
 // Concept: decorate a christmas tree
 //           Goal: Create a blank tree and allow user to dymnamicly decorate it 
-//                 add snow, gifts, star
+//                 add snow, gifts, ordaments, star
 
 
 // Get elements from HTML
