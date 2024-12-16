@@ -185,8 +185,7 @@ function placeCircle(circle){
         const copy = circle.cloneNode(true);
         copy.style.display = 'initial';
         treeContainer.appendChild(copy);
-    };
-    
+    };  
 }
 
 
@@ -194,10 +193,13 @@ function placeCircle(circle){
 function placeBox(e){
     const box = document.createElement('div');
     box.classList.add('box');
+    const boxRibbon = document.createElement('div');
+    boxRibbon.classList.add('boxRibbon');
 
     box.style.left = e.clientX + "px";
     box.style.top = e.clientY + "px";
-
+    
+    box.appendChild(boxRibbon);
     underTree.appendChild(box);
 }
 
